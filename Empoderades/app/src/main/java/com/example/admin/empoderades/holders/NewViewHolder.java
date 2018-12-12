@@ -2,14 +2,13 @@ package com.example.admin.empoderades.holders;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.admin.empoderades.R;
-import com.example.admin.empoderades.model.New;
+import com.example.admin.empoderades.model.News;
 
 public class NewViewHolder extends RecyclerView.ViewHolder {
 
@@ -26,7 +25,7 @@ public class NewViewHolder extends RecyclerView.ViewHolder {
         newsPublishedTime = itemView.findViewById(R.id.news_published_time);
     }
 
-    public void onBind(final New newItem) {
+    public void onBind(final News newItem) {
         newsTitle.setText(newItem.getTitle());
         newsSource.setText(newItem.getSource().getName());
         newsPublishedTime.setText(newItem.getPublishedAt());

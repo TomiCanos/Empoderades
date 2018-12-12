@@ -10,39 +10,24 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import com.example.admin.empoderades.R;
 import com.example.admin.empoderades.adapters.NewsListAdapter;
-import com.example.admin.empoderades.model.New;
+import com.example.admin.empoderades.model.News;
 import com.example.admin.empoderades.presenter.retrofit.NewsDAO;
 import com.example.admin.empoderades.presenter.retrofit.ResultListener;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private List<New> news;
-    private Button getNews;
-    private NewsDAO newsDAO;
-    private RecyclerView newsRecyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        newsRecyclerView = findViewById(R.id.news_recycler_view);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.mainFragmentContainer, new NewsFragment(), "tag");
+        fragmentTransaction.commit();
 
-        newsDAO = new NewsDAO();
-        newsDAO.getNewsAsync(new ResultListener<List<New>>() {
-            @Override
-            public void finish(List<New> result) {
-                news = result;
-                loadData();
-            }
-        });
     }
 
-    public void loadData() {
-        final NewsListAdapter newsAdapter = new NewsListAdapter();
-        newsAdapter.setData(news);
-        newsRecyclerView.setAdapter(newsAdapter);
-        newsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 }

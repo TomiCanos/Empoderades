@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 
 import com.example.admin.empoderades.R;
 import com.example.admin.empoderades.holders.NewViewHolder;
-import com.example.admin.empoderades.model.New;
+import com.example.admin.empoderades.model.News;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NewsListAdapter extends RecyclerView.Adapter {
 
-    private List<New> news = new ArrayList<>();
+    private List<News> news = new ArrayList<>();
 
-    public void setData(final List<New> data) {
+    public void setData(final List<News> data) {
         news.clear();
         news.addAll(data);
         notifyDataSetChanged();

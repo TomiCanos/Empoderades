@@ -7,7 +7,6 @@ import com.example.admin.empoderades.view.CommonQuestionsFragment.NewsSetter;
 import com.google.firebase.database.*;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class CommonQuestionsPresenter {

@@ -1,6 +1,6 @@
 package com.example.admin.empoderades.model;
 
-public class New {
+public class News {
 
     private String title;
     private String description;
