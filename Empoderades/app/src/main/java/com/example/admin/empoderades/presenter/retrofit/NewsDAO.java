@@ -1,6 +1,6 @@
 package com.example.admin.empoderades.presenter.retrofit;
 
-import com.example.admin.empoderades.model.News;
+import com.example.admin.empoderades.model.New;
 import com.example.admin.empoderades.model.NewsContainer;
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
@@ -25,18 +25,18 @@ public class NewsDAO {
         retrofit = retrofitBuilder.client(httpClient.build()).build();
     }
 
-    public void getNewsAsync(final ResultListener<List<News>> vmlistener) {
+    public void getNewsAsync(final ResultListener<List<New>> listener) {
         NewsService newsService = retrofit.create(NewsService.class);
         Call<NewsContainer> call = newsService.getNews();
         call.enqueue(new Callback<NewsContainer>() {
             @Override
             public void onResponse(Call<NewsContainer> call, Response<NewsContainer> response) {
-                vmlistener.finish(response.body().getArticles());
+                listener.finish(response.body().getArticles());
             }
 
             @Override
             public void onFailure(Call<NewsContainer> call, Throwable t) {
-                vmlistener.finish(new ArrayList<News>());
+                listener.finish(new ArrayList<New>());
             }
         });
     }

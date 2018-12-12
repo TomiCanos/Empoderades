@@ -1,10 +1,13 @@
 package com.example.admin.empoderades.model;
 
-public class News {
+public class New {
+
     private String title;
     private String description;
     private String url;
     private String urlToImage;
+    private String publishedAt;
+    private Source source;
 
     public String getTitle() {
         return title;
@@ -20,5 +23,13 @@ public class News {
 
     public String getUrlToImage() {
         return urlToImage;
+    }
+
+    public Source getSource() {
+        return source;
+    }
+
+    public String getPublishedAt() {
+        return publishedAt;
     }
 }
