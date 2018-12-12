@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "368629825874",
+    "firebase_url": "https://empoderades-b3de9.firebaseio.com",
+    "project_id": "empoderades-b3de9",
+    "storage_bucket": "empoderades-b3de9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:368629825874:android:a37d600abf9c074e",
+        "android_client_info": {
+          "package_name": "com.example.admin.empoderades"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "368629825874-9jdacdhusoga14rigk0m7pcda2vbkare.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.admin.empoderades",
+            "certificate_hash": "522e00a23f272e8c5a70e7bde6a8260ef91931e6"
+          }
+        },
+        {
+          "client_id": "368629825874-blactadlcjt1l0k8k39905p49ml41hre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCPkyav_R5YoA-qNLY4Dc6qkr6_UPRkf24"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "368629825874-blactadlcjt1l0k8k39905p49ml41hre.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
