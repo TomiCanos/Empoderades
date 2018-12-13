@@ -20,11 +20,16 @@ public class NewsFragment extends Fragment {
     private List<News> news;
     private NewsDAO newsDAO;
     private RecyclerView newsRecyclerView;
+    private View view;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        if (view != null){
+            return view;
+        }
         View view = inflater.inflate(R.layout.fragment_news, container, false);
 
         newsRecyclerView = view.findViewById(R.id.news_recycler_view);
@@ -47,5 +52,11 @@ public class NewsFragment extends Fragment {
         newsAdapter.setData(news);
         newsRecyclerView.setAdapter(newsAdapter);
         newsRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    @Override
+    public void onStop() {
+        view = getView();
+        super.onStop();
     }
 }

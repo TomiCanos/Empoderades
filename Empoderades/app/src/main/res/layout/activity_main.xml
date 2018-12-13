@@ -6,10 +6,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.MainActivity">
 
-    <RelativeLayout
-            android:id="@+id/mainFragmentContainer"
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-    </RelativeLayout>
+        <RelativeLayout
+                android:layout_weight="200"
+                android:id="@+id/mainFragmentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+        </RelativeLayout>
+
+        <LinearLayout
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <Button
+                    android:id="@+id/news_button"
+                    android:text="news"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            <Button
+                    android:id="@+id/common_question_button"
+                    android:text="questions"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+
 
 </android.support.constraint.ConstraintLayout>

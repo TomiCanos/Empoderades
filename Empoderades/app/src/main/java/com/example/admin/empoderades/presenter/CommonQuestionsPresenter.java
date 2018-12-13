@@ -3,12 +3,10 @@ package com.example.admin.empoderades.presenter;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import com.example.admin.empoderades.model.CommonQuestion;
-import com.example.admin.empoderades.model.News;
 import com.example.admin.empoderades.retrofit.ResultListener;
 import com.google.firebase.database.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class CommonQuestionsPresenter {

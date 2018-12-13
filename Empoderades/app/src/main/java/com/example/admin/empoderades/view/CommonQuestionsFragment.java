@@ -25,6 +25,7 @@ public class CommonQuestionsFragment extends Fragment {
     private CommonQuestionsPresenter commonQuestionsPresenter;
     private List<CommonQuestion> commonQuestions;
     private RecyclerView recyclerView;
+    private View view;
 
 
     public static CommonQuestionsFragment newInstance() {
@@ -34,6 +35,10 @@ public class CommonQuestionsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        if (view != null) {
+            return view;
+        }
+
         View view = inflater.inflate(R.layout.common_questions_fragment, container, false);
 
 
@@ -57,6 +62,12 @@ public class CommonQuestionsFragment extends Fragment {
         commonQuestionAdapter.setData(commonQuestions);
         recyclerView.setAdapter(commonQuestionAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+    }
+
+    @Override
+    public void onStop() {
+        view = getView();
+        super.onStop();
     }
 
 }
