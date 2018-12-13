@@ -17,21 +17,30 @@
                 android:layout_height="0dp">
         </RelativeLayout>
 
+        <ImageView
+                android:background="@color/darkGreen"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
         <LinearLayout
+                android:background="@color/colorPrimaryDark"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-            <Button
+            <TextView
+                    android:textSize="30dp"
+                    android:gravity="center"
                     android:id="@+id/news_button"
-                    android:text="news"
+                    android:text="📰"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>
 
-            <Button
+            <TextView
+                    android:textSize="30dp"
+                    android:gravity="center"
                     android:id="@+id/common_question_button"
-                    android:text="questions"
+                    android:text="📝"
                     android:layout_weight="1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"/>

@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface NewsService {
 
-    @GET("/v2/everything?q=feminista&sortBy=publishedAt&language=es&apiKey=efeb5f40bf49468e8f07ee81bfe0a7a8")
+    @GET("/v2/everything?q=femicidio&sortBy=publishedAt&language=es&apiKey=efeb5f40bf49468e8f07ee81bfe0a7a8")
     Call<NewsContainer> getNews();
 
 }
