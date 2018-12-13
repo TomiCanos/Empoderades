@@ -10,14 +10,14 @@ import com.bumptech.glide.Glide;
 import com.example.admin.empoderades.R;
 import com.example.admin.empoderades.model.News;
 
-public class NewViewHolder extends RecyclerView.ViewHolder {
+public class NewsViewHolder extends RecyclerView.ViewHolder {
 
     private TextView newsTitle;
     private TextView newsSource;
     private TextView newsPublishedTime;
     private ImageView newsImage;
 
-    public NewViewHolder(@NonNull final View itemView) {
+    public NewsViewHolder(@NonNull final View itemView) {
         super(itemView);
         newsTitle = itemView.findViewById(R.id.news_title);
         newsSource = itemView.findViewById(R.id.news_source);

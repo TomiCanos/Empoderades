@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import com.example.admin.empoderades.R;
 import com.example.admin.empoderades.adapters.NewsListAdapter;
 import com.example.admin.empoderades.model.News;
-import com.example.admin.empoderades.presenter.retrofit.NewsDAO;
-import com.example.admin.empoderades.presenter.retrofit.ResultListener;
+import com.example.admin.empoderades.retrofit.NewsDAO;
+import com.example.admin.empoderades.retrofit.ResultListener;
 
 import java.util.List;
 

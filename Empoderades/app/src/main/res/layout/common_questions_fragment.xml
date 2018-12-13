@@ -6,11 +6,10 @@
         android:layout_height="match_parent"
         tools:context=".view.CommonQuestionsFragment">
 
-    <Button
-            android:id="@+id/getQuestionsFromFirebaseButton"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dame las questions firebase"/>
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/common_question_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"/>
 
 </FrameLayout>

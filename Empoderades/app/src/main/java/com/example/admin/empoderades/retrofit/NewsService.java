@@ -1,4 +1,4 @@
-package com.example.admin.empoderades.presenter.retrofit;
+package com.example.admin.empoderades.retrofit;
 
 import com.example.admin.empoderades.model.NewsContainer;
 import retrofit2.Call;

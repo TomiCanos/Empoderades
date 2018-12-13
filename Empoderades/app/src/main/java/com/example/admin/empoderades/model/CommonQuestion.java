@@ -1,13 +1,13 @@
 package com.example.admin.empoderades.model;
 
-public class ComonQuestion {
+public class CommonQuestion {
     private String title;
     private String content;
 
-    public ComonQuestion() {
+    public CommonQuestion() {
     }
 
-    public ComonQuestion(String title, String content) {
+    public CommonQuestion(String title, String content) {
         this.title = title;
         this.content = content;
     }

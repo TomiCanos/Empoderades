@@ -1,4 +1,4 @@
-package com.example.admin.empoderades.presenter.retrofit;
+package com.example.admin.empoderades.retrofit;
 
 public interface ResultListener<T> {
     void finish(T resultado);

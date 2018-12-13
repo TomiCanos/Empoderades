@@ -2,32 +2,36 @@ package com.example.admin.empoderades.presenter;
 
 import android.support.annotation.NonNull;
 import android.util.Log;
+import com.example.admin.empoderades.model.CommonQuestion;
 import com.example.admin.empoderades.model.News;
-import com.example.admin.empoderades.view.CommonQuestionsFragment.NewsSetter;
+import com.example.admin.empoderades.retrofit.ResultListener;
 import com.google.firebase.database.*;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class CommonQuestionsPresenter {
 
-    private List<News> newsFromDatabase;
-    private NewsSetter newsSetter;
+    private List<CommonQuestion> commonQuestionsFromDatabase;
     private DatabaseReference firebaseDatabase;
 
 
-    public CommonQuestionsPresenter(NewsSetter newsSetter) {
-        this.newsSetter = newsSetter;
-        newsFromDatabase = new ArrayList<>();
+    public CommonQuestionsPresenter() {
+        commonQuestionsFromDatabase = new ArrayList<>();
         firebaseDatabase = FirebaseDatabase.getInstance().getReference();
-
     }
 
-    public void getNews() {
-        ValueEventListener newsListener = new ValueEventListener() {
+    public void getQuestions(final ResultListener<List<CommonQuestion>> listener) {
+
+        ValueEventListener questionsListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                newsFromDatabase = (List<News>) dataSnapshot.getValue();
+                for (DataSnapshot data : dataSnapshot.getChildren()) {
+                    CommonQuestion commonQuestion = data.getValue(CommonQuestion.class);
+                    commonQuestionsFromDatabase.add(commonQuestion);
+                }
+                listener.finish(commonQuestionsFromDatabase);
             }
 
             @Override
@@ -35,7 +39,7 @@ public class CommonQuestionsPresenter {
                 Log.w("firebase", "loadPost:onCancelled", databaseError.toException());
             }
         };
-        firebaseDatabase.addValueEventListener(newsListener);
+        firebaseDatabase.addValueEventListener(questionsListener);
 
     }
 
