@@ -3,11 +3,13 @@ package com.example.admin.empoderades.holders;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.admin.empoderades.R;
 import com.example.admin.empoderades.model.News;
@@ -31,8 +33,17 @@ public class NewsViewHolder extends RecyclerView.ViewHolder {
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(news.getUrl()));
-                itemView.getContext().startActivity(browserIntent);
+                CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
+                CustomTabsIntent customTabsIntent = builder.build();
+                customTabsIntent.launchUrl(itemView.getContext(), Uri.parse(news.getUrl()));
+            }
+        });
+
+        itemView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(itemView.getContext(), "Agregado a favoritos", Toast.LENGTH_SHORT).show();
+                return false;
             }
         });
     }
